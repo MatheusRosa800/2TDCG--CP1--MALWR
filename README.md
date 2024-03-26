@@ -19,58 +19,66 @@ PASS: mat-eusrosa
 
 Utilizei o DIE para ver mais informações osbre o executavel, ver sua estrutura e se havia proteções.
 
-Imagem do programa
 <img src="Imagens/Imagem1.png">
 
 ## 2. Abri pelo CMD
 
 Como o programa fechava e nem se quer mostrava alguma mensagem de erro, abri pelo cmd.
 
-Imagem do programa
+<img src="Imagens/Imagem2.png">
 
 ## 3. Abri o x32dbg e procurei pela a string de erro mostrada no cmd
 
-IMagem das strings
+<img src="Imagens/Imagem3.png">
 
-## 4. Breakpoints para ir analisando instrução por instrução
-
-Imagem Breakpoints
-
-## 5. Primeira Analise
+## 4. Primeira Analise
 
 Logo depois de inserir a senha ele pula para uma função que compara a entrada do user com o valor B 
 
-Transformando em decimal, seria 11. 
+Transformando "B" em decimal, ficaria 11. 
 
 Logo, a entrada do user precisa ter 11 caracteres. 
 
-Imagem do CMP B
+<img src="Imagens/Imagem4.png">
 
 ## 5. Segundo erro
 
-testando com uma senha de 11 caracteres e chutandoa a senha aparece esse erro 
+Testando com uma senha de 11 caracteres e chutandoa a senha aparece esse erro 
 
-Imagem Erro 2 
+<img src="Imagens/Imagem5.png">
 
 Fazendo a mesma coisa de ir atras da string e tal encontrei duas validações
 
 ## 7. Segunda Analise
 
-Ao inserir a senha o valor vai diretamente para eax
+Primeira coisa que notei foi que ao inserir a senha o valor vai diretamente para eax
 
-e depois vem a primeira validação 
+e depois vem a primeira validação em formato de loop
 
-## 8. LOOP
+## 8. Primeira Validação - LOOP
 
-faz um loop que 
-compara eax com edi 
-e incrementa o edi ate ficarem iguais
+<img src="Imagens/Imagem6.png">
 
-Segunda validação 
+Basicamente é um loop onde compara eax com edi e incrementa o edi ate ficarem iguais
 
-compara eax+3 com 2D 
-2D em ascii é ifen(-)
-sendo eax matheusrosa
-eax+3 seria eusrosa
-o quarto caracter precisa ser um ifen - 
+## 9. Segunda Validação - LOOP
 
+A segunda validaçãose trata de um compare entre eax+3 e com o valor hexa 2D.
+
+<img src="Imagens/Imagem7.png">
+
+| Hexa-decimal  |  ASCII        |
+| ------------- | ------------- |
+| 2D            | -             |
+| eax           | Password      | 
+
+Convertendo os valores para melhor entendimento: 
+2D -> ( - ) ífen em ascii
+eax - seria o unput do password
+
+eax+3 seria o 4 caracter da senha digitada.
+Sendo assim, o quarto caracter precisa ser um ífen
+
+## 10. Bypassando Validações
+
+<img src="Imagens/Imagem8.png">
