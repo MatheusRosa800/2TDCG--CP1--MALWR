@@ -65,7 +65,7 @@ Basicamente é um loop onde compara eax com edi e incrementa o edi até ficarem 
 
 ## 9. Segunda Validação - LOOP
 
-A segunda validação se trata de um compare entre eax+4 e com o valor hexa 2D.
+A segunda validação se trata de um compare entre eax+3 e com o valor hexa 2D.
 
 <img src="Imagens/Imagem7.png">
 
