@@ -17,25 +17,27 @@ PASS: mat-eusrosa
 
 ## 1. DIE
 
-Utilizei o DIE para ver mais informações osbre o executavel, ver sua estrutura e se havia proteções.
+Utilizei o DIE para ver mais informações sobre o executável, ver sua estrutura, se tinha proteções, etc.
 
 <img src="Imagens/Imagem1.png">
 
-## 2. Abri pelo CMD
+## 2. CMD
 
-Como o programa fechava e nem se quer mostrava alguma mensagem de erro, abri pelo cmd.
+Como o programa fechava e nem se quer mostrava alguma mensagem de erro, abri pela Command Line.
 
 <img src="Imagens/Imagem2.png">
 
-## 3. Abri o x32dbg e procurei pela a string de erro mostrada no cmd
+## 3. x32dbg
+
+Abri o debugger e a primeira coisa que fiz foi procurar pela string de erro que vi no cmd. 
 
 <img src="Imagens/Imagem3.png">
 
-## 4. Primeira Analise
+## 4. Primeira Análise
 
-Logo depois de inserir a senha ele pula para uma função que compara a entrada do user com o valor B 
+Logo depois de inserir a senha o programa pula para uma função que compara a entrada do user com o valor B 
 
-Transformando "B" em decimal, ficaria 11. 
+Transformando "B" em decimal, fica 11. 
 
 Logo, a entrada do user precisa ter 11 caracteres. 
 
@@ -43,27 +45,27 @@ Logo, a entrada do user precisa ter 11 caracteres.
 
 ## 5. Segundo erro
 
-Testando com uma senha de 11 caracteres e chutandoa a senha aparece esse erro 
+Testando com um user de 11 caracteres e chutando a senha apareceu uma mensagem de erro diferente 
 
 <img src="Imagens/Imagem5.png">
 
-Fazendo a mesma coisa de ir atras da string e tal encontrei duas validações
+Fazendo a mesma coisa de ir atrás da string e encontrei duas validações
 
 ## 7. Segunda Analise
 
 Primeira coisa que notei foi que ao inserir a senha o valor vai diretamente para eax
 
-e depois vem a primeira validação em formato de loop
+Depois vem a primeira validação em formato de loop.
 
 ## 8. Primeira Validação - LOOP
 
 <img src="Imagens/Imagem6.png">
 
-Basicamente é um loop onde compara eax com edi e incrementa o edi ate ficarem iguais
+Basicamente é um loop onde compara eax com edi e incrementa o edi até ficarem iguais
 
 ## 9. Segunda Validação - LOOP
 
-A segunda validaçãose trata de um compare entre eax+3 e com o valor hexa 2D.
+A segunda validação se trata de um compare entre eax+4 e com o valor hexa 2D.
 
 <img src="Imagens/Imagem7.png">
 
