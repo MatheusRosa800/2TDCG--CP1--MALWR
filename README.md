@@ -7,7 +7,9 @@ Checkpoint realizado com o intuito de colocar em prática todos os conhecimentos
 
 - Matheus Rosa
 
-### Credenciais corretas
+### Credenciais usadas
 
 USER: matheusrosa
-PASS:
+PASS: mat-eusrosa
+
+
