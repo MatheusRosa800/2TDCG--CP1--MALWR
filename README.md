@@ -83,4 +83,10 @@ Sendo assim, o quarto caracter precisa ser um ífen
 
 ## 10. Bypassando Validações
 
+Resumindo, para bypassar o programa é necessário:
+
+- USER com exatamente 11 caracteres.
+- PASSWORD com os 3 primeiros caracteres iguais ao usuário.
+- 4° caracter da PASSWORD deve ser um ÍFEN.  
+
 <img src="Imagens/Imagem8.png">
