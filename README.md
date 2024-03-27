@@ -63,7 +63,9 @@ Depois vem a primeira validação em formato de loop.
 
 Basicamente é um loop onde compara eax com edi e incrementa o edi até ficarem iguais
 
-## 9. Segunda Validação - LOOP
+Ele serve como um while que verifica caracter por caracter.
+
+## 9. Segunda Validação
 
 A segunda validação se trata de um compare entre eax+3 e com o valor hexa 2D.
 
